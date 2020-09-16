@@ -1,0 +1,40 @@
+@import '../../assets/partials/partials.scss';
+
+.header{
+
+    height: 100%;
+    background-color: $blue;
+    &__inner{
+        @include wrapper;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__pokeball{
+        height: 50px;
+        cursor: pointer;
+    }
+
+    &__nav{
+        width: 20%;
+    }
+
+    &__link{
+        text-transform: uppercase;
+        padding: 0.4rem;
+        background-color: $red;
+        text-decoration: unset;
+        border-radius: 40px;
+        color: $blue;
+    }
+
+    &__link:hover{
+        color: $yellow;
+    }
+
+    &__list{
+        display: flex;
+        justify-content: space-around;
+    }
+}
