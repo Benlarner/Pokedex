@@ -11,11 +11,20 @@ class Pokehome extends React.Component{
         selectedPokemon: []
     }
 
+    showPokemon = (pokemon) => {
+        let searchedPokemon = this.state.selectedPokemon.concat([pokemon]);
+        this.setState({
+            selectedPokemon: searchedPokemon[0]
+        });
+    }
+
+    
+
     render(){
         return(
             <main className = "pokehome">
-                <Pokeform />
-                <Pokedex />
+                <Pokeform searchPokemon = {this.showPokemon} />
+                <Pokedex selectedPokemon = {this.state.selectedPokemon} />
             </main>
         )
     }

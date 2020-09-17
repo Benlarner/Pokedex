@@ -1,0 +1,11 @@
+@import '../../assets/partials/partials.scss';
+
+.pokehome{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../../assets/images/pikabackground.jpeg);
+    background-size: cover;
+    @include wrapper;
+}

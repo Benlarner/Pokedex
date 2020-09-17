@@ -2,28 +2,44 @@ import axios from 'axios';
 import React from 'react';
 import './Pokeform.scss';
 
-let URL = "https://pokeapi.co/api/v2/pokemon/";
+
+
 
 class Pokeform extends React.Component{
 
     findPokemon = (e) => {
         e.preventDefault();
         let name = e.target.pokemon.value;
+        let URL = `https://pokeapi.co/api/v2/pokemon/${name}`;
         name = name.toLowerCase();
         if(!name){
             alert('Please enter a Pokemon');
         } else{
             axios.get(URL)
         .then(response => {
-            let pokemons = response.data.results;
-            let pokemon = pokemons.filter(function(pokemon) {
-                return pokemon.name === e.target.pokemon.value;
-            })
-                console.log(pokemon)
-            })
+            let pokemon = response.data;
+            console.log(pokemon);
+            let pokePic = pokemon.sprites.front_shiny;
+            let pokeName = pokemon.name;
+            let pokeWeight = pokemon.weight;
+            let pokeHeight = pokemon.height;
 
-            .catch(error => {
-                return error
+            let newPokemon = {
+                img: pokePic,
+                name: pokeName,
+                weight: pokeWeight,
+                height: pokeHeight
+            }
+
+            console.log(newPokemon);
+
+            this.props.searchPokemon(newPokemon);
+                
+            })
+        
+            .catch( error => {
+                error = alert('Please enter a valid Pokemon');
+                 return error
             })
 
             e.target.reset();
