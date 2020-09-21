@@ -2,16 +2,17 @@
 
 .pokedex{
     height: 100%;
-    width: 50%;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(../../assets/images/pokedex.png);
     background-size: cover;
+    background-color: $blue;
+    opacity: 0.8;
 
     &__container{
         height: 90%;
-        width: 80%;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -19,11 +20,16 @@
 
     &__inner{
         height: 90%;
-        width: 80%;
+        width: 100%;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    &__info{
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     &__image{
@@ -33,4 +39,24 @@
     &__name{
         text-transform: capitalize;
     }
+
+    &__stats{
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    // &__stat{
+    //     border: 2px solid black;
+    //     width: 50%;
+    //     height: 100px;
+    //     text-align: center;
+    //     display: flex;
+    //     align-items: center;
+    // }
 }

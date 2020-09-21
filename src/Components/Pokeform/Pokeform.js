@@ -21,14 +21,19 @@ class Pokeform extends React.Component{
             console.log(pokemon);
             let pokePic = pokemon.sprites.front_shiny;
             let pokeName = pokemon.name;
+            let pokeExperience = pokemon.base_experience;
             let pokeWeight = pokemon.weight;
             let pokeHeight = pokemon.height;
+            let pokeType1 = pokemon.types[0].type.name;
+            let pokeType2 = pokemon.types[1].type.name;
 
             let newPokemon = {
                 img: pokePic,
                 name: pokeName,
+                types: [pokeType1, pokeType2],
                 weight: pokeWeight,
-                height: pokeHeight
+                height: pokeHeight,
+                baseExperience: pokeExperience
             }
 
             console.log(newPokemon);
